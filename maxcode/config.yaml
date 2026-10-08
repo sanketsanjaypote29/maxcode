@@ -1,0 +1,36 @@
+embeddings:
+  provider: huggingface
+  model: all-MiniLM-L6-v2
+
+chromadb:
+  persist_dir: .maxcode/chromadb/
+  collection_name: codebase
+
+elasticsearch:
+  url: http://localhost:9200
+  index_name: codebase
+
+qdrant: 
+ collection_name: hybrid_codebase
+
+llm:
+  provider: gemini
+  model: gemini-3.5-flash
+  judge_model: gemini-3.5-flash
+
+rag: 
+ mode: hybrid           # semantic | hybrid 
+ 
+vector_store: 
+ provider: qdrant 
+ retrieval_mode: hybrid  # dense | sparse | hybrid 
+
+memory: 
+  db_path: .maxcode/memory/memory.db 
+  summarize_at_tokens: 4000 
+  keep_last_messages: 20 
+
+
+skills:
+  skills_dir: .maxcode/skills
+

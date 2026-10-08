@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.chromadb/
+.maxcode/
+.memory/
+__pycache__/
+*.py[cod]
+*.pyx
+dist/
+.venv/
